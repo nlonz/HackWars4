@@ -12,11 +12,9 @@ import com.example.mastercard.service.providers.MasterCardShoppingCartService;
 import com.example.mastercard.service.request.LogInRequest;
 import com.example.mastercard.service.response.FlightMenu;
 import com.example.mastercard.service.response.ShoppingSession;
+import com.example.rest.Product;
 
-import org.json.JSONObject;
-import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
 public class DrinkActivity extends AppCompatActivity {
@@ -55,12 +53,11 @@ public class DrinkActivity extends AppCompatActivity {
         @Override
         protected ShoppingSession doInBackground(Void... params) {
             try {
-                final String url = "http://sample-env.mq9gh7xwxe.us-east-2.elasticbeanstalk.com/products";
+                final String url = "http://sample-env.mq9gh7xwxe.us-east-2.elasticbeanstalk.com/products/purchase";
+                Product beer = new Product("123", "-1");
                 RestTemplate restTemplate = new RestTemplate();
-                restTemplate.getMessageConverters().add(new StringHttpMessageConverter());
-                String productData = restTemplate.getForObject(url, String.class);
-                JSONObject object = new JSONObject(productData);
-                Log.d("JSON", object.toString());
+                restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+                restTemplate.postForObject(url, beer, Product.class);
             } catch (Exception e) {
                 Log.e("DrinkActivity", e.getMessage(), e);
             }
