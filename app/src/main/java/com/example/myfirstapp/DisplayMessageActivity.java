@@ -17,5 +17,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
         TextView textView = (TextView) findViewById(R.id.textView);
         textView.setText(message);
+
+
     }
 }
