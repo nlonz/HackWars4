@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     tools:context="com.example.myfirstapp.DisplayMessageActivity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="388dp"
-        android:layout_height="378dp"
-        app:srcCompat="@drawable/finalpagebeer"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="0dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/finalpagebeer"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
