@@ -24,9 +24,9 @@ public class DrinkActivity extends AppCompatActivity {
         menu  = (FlightMenu) getIntent().getSerializableExtra("EXTRA_MENU");
     }
 
-    public void selectJack(View view) {
+    public void selectRedWine(View view) {
         Intent intent = new Intent(this, DisplayMessageActivity.class);
-        String message = "You Have Selected Jack Daniels";
+        String message = "You Have Selected Red Wine";
         intent.putExtra(EXTRA_MESSAGE, message);
         ShoppingSession shopSession = new HttpRequestTask().doInBackground();
         String token = shopSession.getAccessToken();
