@@ -1,5 +1,3 @@
 <resources>
     <string name="app_name">MeAAls On Board</string>
-    <string name="edit_message">Enter A Message</string>
-    <string name="button_send">Send</string>
 </resources>
